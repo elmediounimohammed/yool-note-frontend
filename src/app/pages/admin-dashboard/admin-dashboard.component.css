@@ -1,0 +1,38 @@
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+}
+
+.sidebar-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+}
+
+.nav-link {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+/* Top Bar Styling */
+header {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+header h2 {
+  margin: 0;
+}
+
+/* Main Content Area */
+.main-content {
+  background-color: #fff;
+  min-height: 100vh;
+}

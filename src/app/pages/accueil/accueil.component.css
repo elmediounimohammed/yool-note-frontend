@@ -1,0 +1,12 @@
+.container {
+  height: 100vh; /* Full height of the viewport */
+}
+
+h1 {
+  font-weight: 700;
+  color: #003b80;
+}
+
+p {
+  color: #6c757d;
+}

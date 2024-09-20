@@ -1,0 +1,25 @@
+.navbar-brand span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #003b80;
+}
+
+.nav-link {
+  color: #003b80;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  border-color: #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e66500;
+  border-color: #e66500;
+}

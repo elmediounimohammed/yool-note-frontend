@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Gérer les classes</h2>
+
+  <!-- Form for creating or updating a class -->
+  <form [formGroup]="classForm" (ngSubmit)="isEditing ? updateClasse() : createClasse()">
+    <div class="mb-3">
+      <label for="titre" class="form-label">Titre</label>
+      <input type="text" class="form-control" id="titre" formControlName="titre" required>
+    </div>
+    <div class="mb-3">
+      <label for="matiere" class="form-label">Matiere</label>
+      <input type="text" class="form-control" id="matiere" formControlName="matiere" required>
+    </div>
+    <div class="mb-3">
+      <label for="niveau" class="form-label">Niveau</label>
+      <input type="text" class="form-control" id="niveau" formControlName="niveau" required>
+    </div>
+    <div class="mb-3">
+      <label for="prof" class="form-label">Professeur</label>
+      <input type="text" class="form-control" id="prof" formControlName="prof" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update Class' : 'Create Class' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
+  </form>
+
+  <!-- Table displaying the list of classes -->
+  <table class="table table-bordered mt-4">
+    <thead>
+    <tr>
+      <th>titre</th>
+      <th>matiere</th>
+      <th>niveau</th>
+      <th>professeur</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let classe of classes">
+      <td>{{ classe.titre }}</td>
+      <td>{{ classe.matiere }}</td>
+      <td>{{ classe.niveau }}</td>
+      <td>{{ classe.prof }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning" (click)="editClasse(classe.id)">Modifier</button>
+        <button class="btn btn-danger" (click)="deleteClasse(classe.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

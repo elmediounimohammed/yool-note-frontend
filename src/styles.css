@@ -1,1 +1,270 @@
-/* You can add global styles to this file, and also import other style files */
+/*!* You can add global styles to this file, and also import other style files *!*/
+/*!* styles.css *!*/
+/*body {*/
+/*  background-color: #206ab4;*/
+/*}*/
+
+/*.container {*/
+/*  margin-top: 40px;*/
+/*}*/
+/*!* Optional custom styles for login page *!*/
+/*.card {*/
+/*  border-radius: 10px;*/
+/*}*/
+
+/*.btn-primary {*/
+/*  background-color: #007bff;*/
+/*  border-color: #007bff;*/
+/*  border-radius: 50px;*/
+/*}*/
+
+/*.btn-primary:hover {*/
+/*  background-color: #0056b3;*/
+/*  border-color: #004085;*/
+/*}*/
+
+/*!* Global styles for buttons and inputs *!*/
+/*.input,*/
+/*.form-control {*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*  padding: .375rem .75rem;*/
+/*  font-size: 1rem;*/
+/*  font-family: 'Arial', sans-serif;*/
+/*  line-height: 1.5;*/
+/*  color: #495057;*/
+/*  background-color: #fff;*/
+/*  border: 1px solid #ced4da;*/
+/*  border-radius: .25rem;*/
+/*  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;*/
+/*}*/
+
+/*.input:focus,*/
+/*.form-control:focus {*/
+/*  outline: 3px solid rgba(0, 123, 255, 0.25);*/
+/*  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, 0.25);*/
+/*}*/
+
+/*!* Button Styling *!*/
+/*.btn {*/
+/*  display: inline-block;*/
+/*  font-weight: 400;*/
+/*  color: #fff;*/
+/*  background-color: #007bff;*/
+/*  border: 1px solid transparent;*/
+/*  padding: .375rem .75rem;*/
+/*  font-size: 1rem;*/
+/*  line-height: 1.5;*/
+/*  border-radius: .25rem;*/
+/*  transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;*/
+/*}*/
+
+/*.btn:hover {*/
+/*  background-color: #0056b3;*/
+/*  border-color: #004085;*/
+/*}*/
+
+/*.btn:focus,*/
+/*.btn.focus {*/
+/*  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, 0.25);*/
+/*}*/
+
+/*!* Navbar customization *!*/
+/*.navbar {*/
+/*  background-color: #f8f9fa;*/
+/*}*/
+
+/*.navbar-brand img {*/
+/*  margin-right: 10px;*/
+/*}*/
+
+/*.nav-link {*/
+/*  font-weight: 500;*/
+/*  color: #495057;*/
+/*}*/
+
+/*.nav-link:hover {*/
+/*  color: #007bff;*/
+/*}*/
+
+/*!* Button customization *!*/
+/*.btn-primary {*/
+/*  background-color: #007bff;*/
+/*  border-color: #007bff;*/
+/*}*/
+
+/*.btn-primary:hover {*/
+/*  background-color: #0056b3;*/
+/*  border-color: #0056b3;*/
+/*}*/
+
+/*!* Hero Section *!*/
+/*.container h1 {*/
+/*  font-size: 2.5rem;*/
+/*  color: #343a40;*/
+/*}*/
+
+/*.container p {*/
+/*  font-size: 1.25rem;*/
+/*  color: #6c757d;*/
+/*}*/
+
+/*!* A Propos Section *!*/
+/*#apropos {*/
+/*  margin-top: 50px;*/
+/*}*/
+
+/*#apropos h2 {*/
+/*  font-size: 2rem;*/
+/*  color: #343a40;*/
+/*}*/
+
+/*#apropos p {*/
+/*  font-size: 1.125rem;*/
+/*  color: #6c757d;*/
+/*  line-height: 1.6;*/
+/*}*/
+
+/* Font and Color Settings */
+body {
+  font-family: 'Poppins', sans-serif; /* Or any similar Google font */
+  color: #333; /* Dark grey for general text */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #333;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff8c00; /* Same orange as seen on the button */
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #ff8c00; /* Orange Button */
+  border-color: #ff8c00;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary:hover {
+  background-color: #ff7518; /* Slightly darker on hover */
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #723b04; /* Dark Blue Background */
+  color: white;
+  padding: 4rem 0;
+  text-align: left;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Image Section */
+.image-section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.image-section img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+/* Wave Effect at Bottom */
+.wave-container {
+  position: relative;
+  margin-top: -4rem;
+}
+
+.wave {
+  width: 100%;
+  height: 100px;
+
+  background-size: cover;
+}
+/* Custom Font */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Links */
+.nav-link {
+  color: #003b80;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  border-color: #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e66500;
+  border-color: #e66500;
+}
+
+/* Hero Section */
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.hero-section p {
+  font-size: 1.125rem;
+  color: #dcdcdc;
+}
+
+/* Image Grid */
+.img-fluid {
+  border-radius: 0.5rem;
+}
+/* Styling for the wave */
+.custom-shape-divider-bottom-1638734082 {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1638734082 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-bottom-1638734082 .shape-fill {
+  fill: #ffffff; /* Change the fill color to match the background of the next section */
+}
+
+
+

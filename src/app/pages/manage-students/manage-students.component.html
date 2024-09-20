@@ -1,0 +1,83 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Gérer les Étudiants</h2>
+
+  <!-- Form to Add/Edit Étudiant -->
+  <form (ngSubmit)="isEditing ? saveEditedEtudiant() : addEtudiant()" class="mb-4">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="nom" [(ngModel)]="newEtudiant.nom" name="nom" required>
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">Prénom</label>
+      <input type="text" class="form-control" id="prenom" [(ngModel)]="newEtudiant.prenom" name="prenom" required>
+    </div>
+    <div class="mb-3">
+      <label for="dateNaissance" class="form-label">Date de Naissance</label>
+      <input type="date" class="form-control" id="dateNaissance" [(ngModel)]="newEtudiant.dateNaissance" name="dateNaissance" required>
+    </div>
+    <div class="mb-3">
+      <label for="adresse" class="form-label">Adresse</label>
+      <input type="text" class="form-control" id="adresse" [(ngModel)]="newEtudiant.adresse" name="adresse" required>
+    </div>
+
+    <!-- Parcours Scolaire Section -->
+    <h4 class="mt-3">Parcours Scolaire</h4>
+    <div class="mb-3">
+      <label for="resultat" class="form-label">Résultat</label>
+      <input type="text" class="form-control" id="resultat" [(ngModel)]="newEtudiant.parcoursScolaire.resultat" name="resultat" required>
+    </div>
+    <div class="mb-3">
+      <label for="niveau" class="form-label">Niveau</label>
+      <input type="text" class="form-control" id="niveau" [(ngModel)]="newEtudiant.parcoursScolaire.niveau" name="niveau" required>
+    </div>
+    <div class="mb-3">
+      <label for="nomEcole" class="form-label">Nom de l'École</label>
+      <input type="text" class="form-control" id="nomEcole" [(ngModel)]="newEtudiant.parcoursScolaire.nomEcole" name="nomEcole" required>
+    </div>
+
+    <!-- Classe Section -->
+    <div class="mb-3">
+      <label for="classe" class="form-label">Classe</label>
+      <input type="text" class="form-control" id="classe" [(ngModel)]="newEtudiant.classe.titre" name="classe" required>
+    </div>
+
+    <!-- Buttons -->
+    <button type="submit" class="btn btn-success">{{ isEditing ? 'Sauvegarder' : 'Ajouter l\'étudiant' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm()">Réinitialiser</button>
+  </form>
+
+  <!-- Etudiant List Table -->
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Date de Naissance</th>
+      <th>Adresse</th>
+      <th>Résultat</th>
+      <th>Niveau</th>
+      <th>Nom de l'École</th>
+      <th>Classe</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let etudiant of etudiants">
+      <td>{{ etudiant.id }}</td>
+      <td>{{ etudiant.nom }}</td>
+      <td>{{ etudiant.prenom }}</td>
+      <td>{{ etudiant.dateNaissance }}</td>
+      <td>{{ etudiant.adresse }}</td>
+      <td>{{ etudiant.parcoursScolaire.resultat }}</td>
+      <td>{{ etudiant.parcoursScolaire.niveau }}</td>
+      <td>{{ etudiant.parcoursScolaire.nomEcole }}</td>
+      <td>{{ etudiant.classe.titre }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning" (click)="editEtudiant(etudiant)">Modifier</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteEtudiant(etudiant.id)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav class="sidebar bg-dark text-white p-3 vh-100">
+    <div class="sidebar-header">
+      <h3>YOOLNOTE Admin</h3>
+    </div>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="overview" routerLinkActive="active">Vue d'ensemble du tableau de bord</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="students" routerLinkActive="active">Gérer les Étudiants</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="classes" routerLinkActive="active">Gérer les classes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="cours" routerLinkActive="active">Gérer les Cours</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="evaluations" routerLinkActive="active">Gérer les Évaluations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="partenaires" routerLinkActive="active">Gérer les Partenaires</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="main-content w-100 p-3">
+    <router-outlet></router-outlet> <!-- This is where child components will be displayed -->
+  </div>
+</div>
