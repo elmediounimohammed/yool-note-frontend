@@ -28,6 +28,19 @@
 
   <!-- Main Content Area -->
   <div class="main-content w-100 p-3">
+    <div class="d-flex justify-content-end align-items-center mb-3">
+      <!-- Profile Button -->
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/assets/images/profile-placeholder.png" alt="Profile" class="rounded-circle" width="40" height="40">
+          <span class="ms-2">Admin Profile</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" routerLink="profile">View Profile</a></li>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
     <router-outlet></router-outlet> <!-- This is where child components will be displayed -->
   </div>
 </div>

@@ -1,1 +1,54 @@
-<p>manage-courses works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Gérer les Cours</h2>
+
+  <!-- Form for creating or updating a course -->
+  <form [formGroup]="coursForm" (ngSubmit)="isEditing ? updateCours() : createCours()">
+    <div class="mb-3">
+      <label for="intitule" class="form-label">Intitulé du Cours</label>
+      <input type="text" class="form-control" id="intitule" formControlName="intitule" required>
+    </div>
+    <div class="mb-3">
+      <label for="nbreHeure" class="form-label">Nombre d'Heures</label>
+      <input type="number" class="form-control" id="nbreHeure" formControlName="nbreHeure" required>
+    </div>
+    <div class="mb-3">
+      <label for="classeIds" class="form-label">Classes</label>
+      <select class="form-control" id="classeIds" formControlName="classeIds" multiple>
+        <option *ngFor="let classe of classes" [value]="classe.id">{{ classe.titre }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="partenaireId" class="form-label">Partenaire</label>
+      <select class="form-control" id="partenaireId" formControlName="partenaireId">
+        <option *ngFor="let partenaire of partenaires" [value]="partenaire.idPartenaire">{{ partenaire.nom }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update Course' : 'Create Course' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
+  </form>
+
+  <!-- Table displaying the list of courses -->
+  <table class="table table-bordered mt-4">
+    <thead>
+    <tr>
+      <th>Intitulé</th>
+      <th>Nombre d'Heures</th>
+      <th>Classes</th>
+      <th>Partenaire</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cours of coursList">
+      <td>{{ cours.intitule }}</td>
+      <td>{{ cours.nbreHeure }}</td>
+      <td>{{ cours.classeNames.join(', ') }}</td>  <!-- Display class names here -->
+      <td>{{ cours.partenaireName }}</td>  <!-- Display partner name here -->
+      <td>
+        <button class="btn btn-sm btn-warning" (click)="editCours(cours.idCours)">Modifier</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteCours(cours.idCours)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

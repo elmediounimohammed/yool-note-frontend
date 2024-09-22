@@ -1,1 +1,56 @@
-<p>manage-partners works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Gérer les Partenaires</h2>
+  <form [formGroup]="partenaireForm" (ngSubmit)="isEditing ? updatePartenaire() : createPartenaire()">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="nom" formControlName="nom" required>
+    </div>
+    <div class="mb-3">
+      <label for="Domaine" class="form-label">Domaine</label>
+      <input type="text" class="form-control" id="Domaine" formControlName="Domaine" required>
+    </div>
+    <div class="mb-3">
+      <label for="telephone" class="form-label">Téléphone</label>
+      <input type="text" class="form-control" id="telephone" formControlName="telephone" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email" required>
+    </div>
+    <div class="mb-3">
+      <label for="logo" class="form-label">Logo</label>
+      <input type="file" class="form-control" id="logo" (change)="onFileSelected($event)">
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update Partner' : 'Create Partner' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm()">Cancel</button>
+  </form>
+
+  <!-- Table displaying the list of partners -->
+  <table class="table table-bordered mt-4">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Domaine</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Logo</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let partenaire of partenaires">
+      <td>{{ partenaire.nom }}</td>
+      <td>{{ partenaire.Domaine }}</td>
+      <td>{{ partenaire.telephone }}</td>
+      <td>{{ partenaire.email }}</td>
+      <td>
+        <img *ngIf="partenaire.logo" [src]="partenaire.logo" alt="Logo" width="50">
+      </td>
+      <td>
+        <button class="btn btn-sm btn-warning" (click)="editPartenaire(partenaire.idPartenaire)">Modifier</button>
+        <button class="btn btn-sm btn-danger" (click)="deletePartenaire(partenaire.idPartenaire)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,51 @@
-<p>manage-evaluations works!</p>
+<div class="container mt-4">
+  <h2 class="mb-4">Gérer les Evaluations</h2>
+
+  <form [formGroup]="evaluationForm" (ngSubmit)="isEditing ? updateEvaluation() : createEvaluation()">
+    <div class="mb-3">
+      <label for="classeId" class="form-label">Classe</label>
+      <select class="form-control" id="classeId" formControlName="classeId">
+        <option *ngFor="let classe of classes" [value]="classe.id">{{ classe.titre }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="contenu" class="form-label">Contenu</label>
+      <input type="text" class="form-control" id="contenu" formControlName="contenu" required>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" class="form-control" id="date" formControlName="date" required>
+    </div>
+    <div class="mb-3">
+      <label for="typeEvaluation" class="form-label">Type d'Évaluation</label>
+      <input type="text" class="form-control" id="typeEvaluation" formControlName="typeEvaluation" required>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isEditing ? 'Mettre à Jour' : 'Créer l\'évaluation' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm()">Annuler</button>
+  </form>
+
+  <!-- Table displaying the list of evaluations -->
+  <table class="table table-bordered mt-4">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Contenu</th>
+      <th>Date</th>
+      <th>Type d'Évaluation</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let evaluation of evaluations">
+      <td>{{ evaluation.id }}</td>
+      <td>{{ evaluation.contenu }}</td>
+      <td>{{ evaluation.date }}</td>
+      <td>{{ evaluation.typeEvaluation }}</td>
+      <td>
+        <button class="btn btn-sm btn-warning" (click)="editEvaluation(evaluation.id)">Modifier</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteEvaluation(evaluation.id)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

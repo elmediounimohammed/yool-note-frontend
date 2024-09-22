@@ -68,6 +68,7 @@ export class ManageEtudiantComponent {
     this.administrateurService.getAllEtudiants().subscribe(
       (etudiants: EtudiantDTO[]) => {
         this.etudiants = etudiants;
+        console.log(etudiants);
       },
       (error) => {
         console.error('Error fetching students:', error);

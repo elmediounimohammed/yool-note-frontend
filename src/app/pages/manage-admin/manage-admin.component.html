@@ -1,0 +1,68 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Mon Profil</h2>
+
+  <!-- Profile View Mode -->
+  <div *ngIf="!isEditing">
+    <div class="mb-3">
+      <label for="nomView" class="form-label">Nom:</label>
+      <p id="nomView">{{ adminProfile?.nom }}</p>
+    </div>
+    <div class="mb-3">
+      <label for="prenomView" class="form-label">Prénom:</label>
+      <p id="prenomView">{{ adminProfile?.prenom }}</p>
+    </div>
+    <div class="mb-3">
+      <label for="telephoneView" class="form-label">Téléphone:</label>
+      <p id="telephoneView">{{ adminProfile?.telephone }}</p>
+    </div>
+    <div class="mb-3">
+      <label for="emailView" class="form-label">Email:</label>
+      <p id="emailView">{{ adminProfile?.email }}</p>
+    </div>
+
+    <!-- Image of Profile -->
+<!--    <div class="mb-3">-->
+<!--      <label for="imageView" class="form-label">Image de Profil:</label>-->
+<!--      <div *ngIf="adminProfile?.image; else noImageTemplate">-->
+<!--        <img [src]="adminProfile.image" alt="Profile Image" class="img-thumbnail" width="150">-->
+<!--      </div>-->
+<!--      <ng-template #noImageTemplate>-->
+<!--        <p class="text-muted">Aucune image disponible</p>-->
+<!--      </ng-template>-->
+<!--    </div>-->
+
+    <!-- Edit Button -->
+    <button class="btn btn-primary" type="button" (click)="enableEdit()">Modifier</button>
+  </div>
+
+
+  <!-- Profile Edit Mode -->
+  <form *ngIf="isEditing" [formGroup]="adminForm" (ngSubmit)="updateAdminProfile()">
+    <div class="mb-3">
+      <label for="nomEdit" class="form-label">Nom</label>
+      <input type="text" id="nomEdit" formControlName="nom" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="prenomEdit" class="form-label">Prénom</label>
+      <input type="text" id="prenomEdit" formControlName="prenom" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="telephoneEdit" class="form-label">Téléphone</label>
+      <input type="text" id="telephoneEdit" formControlName="telephone" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="emailEdit" class="form-label">Email</label>
+      <input type="email" id="emailEdit" formControlName="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="passwordEdit" class="form-label">Mot de passe (Laissez vide si inchangé)</label>
+      <input type="password" id="passwordEdit" formControlName="password" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="imageEdit" class="form-label">Image de Profil</label>
+      <input type="file" id="imageEdit" class="form-control" (change)="onFileSelected($event)">
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Annuler</button>
+  </form>
+</div>

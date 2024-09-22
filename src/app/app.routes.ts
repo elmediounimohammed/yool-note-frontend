@@ -5,11 +5,15 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
 import { AuthGuard } from './core/services/auth.guard';
 import {ManageEtudiantComponent} from "./pages/manage-etudiant/manage-etudiant.component";
-import {ManageCoursesComponent} from "./pages/manage-courses/manage-courses.component";
-import {ManageEvaluationsComponent} from "./pages/manage-evaluations/manage-evaluations.component";
+import {ManageCoursComponent} from "./pages/manage-cours/manage-cours.component";
+import {
+  ManageEvaluationsComponent,
+} from "./pages/manage-evaluations/manage-evaluations.component";
 import {ManageClassesComponent} from "./pages/manage-classes/manage-classes.component";
-import {ManagePartnersComponent} from "./pages/manage-partners/manage-partners.component";
-import {DashboardOverviewComponent} from "./pages/dashboard-overview/dashboard-overview.component"; // Import the AuthGuard if you use it
+
+import {ManagePartenaireComponent} from "./pages/manage-partenaire/manage-partenaire.component";
+import {DashboardOverviewComponent} from "./pages/dashboard-overview/dashboard-overview.component";
+import {ManageAdminComponent} from "./pages/manage-admin/manage-admin.component"; // Import the AuthGuard if you use it
 export const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'login', component: LoginComponent },
@@ -22,9 +26,10 @@ export const appRoutes: Routes = [
       { path: 'overview', component: DashboardOverviewComponent },
       { path: 'students', component: ManageEtudiantComponent },
       { path: 'classes', component: ManageClassesComponent },
-      { path: 'cours', component: ManageCoursesComponent },
+      { path: 'cours', component: ManageCoursComponent },
       { path: 'evaluations', component: ManageEvaluationsComponent },
-      { path: 'partenaires', component: ManagePartnersComponent }
+      { path: 'partenaires', component: ManagePartenaireComponent },
+      { path: 'profile', component: ManageAdminComponent },
     ]
   },
   { path: 'student-dashboard', component: StudentDashboardComponent, canActivate: [AuthGuard], data: { role: 'STUDENT' } },
