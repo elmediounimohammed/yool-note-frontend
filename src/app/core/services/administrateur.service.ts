@@ -18,6 +18,7 @@ export class AdministrateurService {
   private PartenaireBaseUrl = 'http://localhost:8070/api/administrateurs/partenaires';
   private CoursBaseUrl = 'http://localhost:8070/api/administrateurs/cours';
   private EvaluationBaseUrl = 'http://localhost:8070/api/administrateurs/evaluations';
+  private EtudiantBaseUrl = 'http://localhost:8070/api/administrateurs/etudiants';
   private baseUrl = 'http://localhost:8070/api/auth/';
 
 
@@ -198,5 +199,8 @@ export class AdministrateurService {
   deleteAdmin(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+
+
 
 }

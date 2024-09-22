@@ -8,3 +8,4 @@ export interface EtudiantDTO {
   parcoursScolaire: { id: number, resultat: string, niveau: string, nomEcole: string };
   classe: { id: number, titre: string };
 }
+

@@ -1,27 +1,55 @@
 <div class="d-flex">
   <!-- Sidebar -->
   <nav class="sidebar bg-dark text-white p-3 vh-100">
-    <div class="sidebar-header">
+    <div class="sidebar-header mb-4">
       <h3>YOOLNOTE Admin</h3>
     </div>
     <ul class="nav flex-column">
+      <!-- Group: Dashboard Overview -->
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="overview" routerLinkActive="active">Vue d'ensemble du tableau de bord</a>
+        <a class="nav-link text-white" routerLink="overview" routerLinkActive="active">
+          <i class="bi bi-speedometer2"></i> Vue d'ensemble
+        </a>
+      </li>
+
+      <!-- Group: School Management -->
+      <li class="nav-item mt-3">
+        <h6 class="text-uppercase text-muted">Gestion de l'école</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="students" routerLinkActive="active">Gérer les Étudiants</a>
+        <a class="nav-link text-white" routerLink="students" routerLinkActive="active">
+          <i class="bi bi-people-fill"></i> Gérer les Étudiants
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="classes" routerLinkActive="active">Gérer les classes</a>
+        <a class="nav-link text-white" routerLink="classes" routerLinkActive="active">
+          <i class="bi bi-building"></i> Gérer les Classes
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="cours" routerLinkActive="active">Gérer les Cours</a>
+        <a class="nav-link text-white" routerLink="cours" routerLinkActive="active">
+          <i class="bi bi-book"></i> Gérer les Cours
+        </a>
+      </li>
+
+      <!-- Group: Evaluations -->
+      <li class="nav-item mt-3">
+        <h6 class="text-uppercase text-muted">Évaluations</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="evaluations" routerLinkActive="active">Gérer les Évaluations</a>
+        <a class="nav-link text-white" routerLink="evaluations" routerLinkActive="active">
+          <i class="bi bi-clipboard-check"></i> Gérer les Évaluations
+        </a>
+      </li>
+
+      <!-- Group: Partner Management -->
+      <li class="nav-item mt-3">
+        <h6 class="text-uppercase text-muted">Gestion des Partenaires</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" routerLink="partenaires" routerLinkActive="active">Gérer les Partenaires</a>
+        <a class="nav-link text-white" routerLink="partenaires" routerLinkActive="active">
+          <i class="bi bi-briefcase-fill"></i> Gérer les Partenaires
+        </a>
       </li>
     </ul>
   </nav>
@@ -33,14 +61,16 @@
       <div class="dropdown">
         <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="/assets/images/profile-placeholder.png" alt="Profile" class="rounded-circle" width="40" height="40">
-          <span class="ms-2">Admin Profile</span>
+<!--          <span class="ms-2">{{ adminProfile?.nom || 'Admin Profile' }}</span>-->
         </button>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" routerLink="profile">View Profile</a></li>
-          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+          <li><a class="dropdown-item" routerLink="profile">Voir le Profil</a></li>
+          <li><a class="dropdown-item" href="/logout">Déconnexion</a></li>
         </ul>
       </div>
     </div>
-    <router-outlet></router-outlet> <!-- This is where child components will be displayed -->
+
+    <!-- This is where child components will be displayed -->
+    <router-outlet></router-outlet>
   </div>
 </div>

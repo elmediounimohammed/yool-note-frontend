@@ -1,0 +1,52 @@
+<app-etudiant-navbar> </app-etudiant-navbar>
+
+<div class="container mt-4">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <h2>Mon Profil Étudiant</h2>
+    <div class="dropdown">
+<!--      <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--        <img [src]="etudiant?.image || '/assets/images/profile-placeholder.png'" alt="Profile" class="rounded-circle" width="40" height="40">-->
+<!--        <span class="ms-2">{{ etudiant?.nom || 'Profil' }}</span>-->
+<!--      </button>-->
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" routerLink="/profile">Voir le Profil</a></li>
+        <li><a class="dropdown-item" href="/logout">Déconnexion</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Display Personal Information -->
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <img src="/assets/images/profile-placeholder.png" alt="Profile Image" class="img-thumbnail" width="150">
+    </div>
+    <div class="col-md-8">
+      <h5>Données Personnelles</h5>
+      <p><strong>Nom et Prénom:</strong> {{ etudiant?.nom }} {{ etudiant?.prenom }}</p>
+      <p><strong>Date de Naissance:</strong> {{ etudiant?.dateNaissance }}</p>
+      <p><strong>Adresse:</strong> {{ etudiant?.adresse }}</p>
+    </div>
+  </div>
+
+  <!-- Academic Records -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h5>Parcours Scolaire</h5>
+      <p><strong>École:</strong> {{ etudiant?.parcoursScolaire?.nomEcole }}</p>
+      <p><strong>Niveau:</strong> {{ etudiant?.parcoursScolaire?.niveau }}</p>
+      <p><strong>Résultat:</strong> {{ etudiant?.parcoursScolaire?.resultat }}</p>
+    </div>
+  </div>
+
+  <!-- Classe Information -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h5>Informations sur la Classe</h5>
+      <p><strong>Titre:</strong> {{ etudiant?.classe?.titre }}</p>
+<!--      <p><strong>Matière:</strong> {{ etudiant?.classe?.matiere }}</p>-->
+<!--      <p><strong>Niveau:</strong> {{ etudiant?.classe?.niveau }}</p>-->
+<!--      <p><strong>Professeur:</strong> {{ etudiant?.classe?.prof }}</p>-->
+    </div>
+  </div>
+</div>

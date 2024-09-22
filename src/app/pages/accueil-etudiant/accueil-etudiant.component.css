@@ -1,0 +1,23 @@
+.container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #007bff;
+}
+
+.img-thumbnail {
+  border-radius: 50%;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.dropdown-toggle {
+  font-size: 1.2rem;
+}

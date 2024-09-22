@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
-import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
 import { AuthGuard } from './core/services/auth.guard';
 import {ManageEtudiantComponent} from "./pages/manage-etudiant/manage-etudiant.component";
 import {ManageCoursComponent} from "./pages/manage-cours/manage-cours.component";
@@ -13,7 +12,8 @@ import {ManageClassesComponent} from "./pages/manage-classes/manage-classes.comp
 
 import {ManagePartenaireComponent} from "./pages/manage-partenaire/manage-partenaire.component";
 import {DashboardOverviewComponent} from "./pages/dashboard-overview/dashboard-overview.component";
-import {ManageAdminComponent} from "./pages/manage-admin/manage-admin.component"; // Import the AuthGuard if you use it
+import {ManageAdminComponent} from "./pages/manage-admin/manage-admin.component";
+import {AccueilEtudiantComponent} from "./pages/accueil-etudiant/accueil-etudiant.component"; // Import the AuthGuard if you use it
 export const appRoutes: Routes = [
   { path: '', component: AccueilComponent },
   { path: 'login', component: LoginComponent },
@@ -32,6 +32,7 @@ export const appRoutes: Routes = [
       { path: 'profile', component: ManageAdminComponent },
     ]
   },
-  { path: 'student-dashboard', component: StudentDashboardComponent, canActivate: [AuthGuard], data: { role: 'STUDENT' } },
+  { path: 'accueil-etudiant', component: AccueilEtudiantComponent },
   { path: '**', redirectTo: '' }
 ];
+// canActivate: [AuthGuard], data: { role: 'STUDENT' }
